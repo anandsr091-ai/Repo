@@ -1,0 +1,21 @@
+rules:
+  - id: dangerous-subprocess-shell-true
+    languages: [python]
+    severity: ERROR
+    message: >
+      subprocess call with shell=True and non-literal input can allow
+      command injection if any part of the command comes from user input.
+    patterns:
+      - pattern: subprocess.run($CMD, shell=True, ...)
+  - id: sql-string-concatenation
+    languages: [python]
+    severity: ERROR
+    message: >
+      Building a SQL query with string concatenation risks SQL injection.
+      Use parameterized queries instead.
+    patterns:
+      - pattern-either:
+          - pattern: $CUR.execute("..." + $VAR)
+          - pattern: $CUR.execute("..." + $VAR + "...")
+          - pattern: $CUR.execute($VAR + "...")
+          - pattern: $CUR.execute(f"...{$VAR}...")

@@ -1,0 +1,8 @@
+scans/
+reports/
+target-app/
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
