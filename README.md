@@ -1,4 +1,12 @@
-# websec-toolkit
+# Project collection
+
+This repository contains independent projects, each in its own directory.
+
+## Projects
+
+- [websec-toolkit](websec-toolkit/README.md): an orchestrated web application security scanner.
+
+Add future projects as separate top-level directories with their own README and setup instructions.# websec-toolkit
 
 A personal web-application security scanner: stitches together free,
 battle-tested open-source engines into one orchestrated pipeline with
